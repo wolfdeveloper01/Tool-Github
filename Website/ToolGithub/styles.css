@@ -114,6 +114,30 @@ footer {
     border-top: 1px solid #58a6ff;
 }
 
+.d-none {
+    display: none;
+}
+
+header, footer {
+    background-color: #0d1117;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+button.btn-primary {
+    margin-left: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+
 .hidden {
     display: none;
 }
