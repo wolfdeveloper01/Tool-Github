@@ -13,17 +13,17 @@
         <h1>Tool Github</h1>
         <nav>
             <ul>
-                <li><a href="#view-readme" onclick="toggleSection('view-readme')"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18m9-9H3"/></svg> Visualizar README</a></li>
-                <li><a href="#readme-animations" onclick="toggleSection('readme-animations')"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg> Animações de README</a></li>
-                <li><a href="#view-svg" onclick="toggleSection('view-svg')"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V4H3v12l9 5 9-5z"/></svg> Visualizar SVG</a></li>
-                <li><a href="#other-tools" onclick="toggleSection('other-tools')"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8 8-8z"/></svg> Outras Ferramentas</a></li>
+                <li><a href="#view-readme" onclick="toggleSection('view-readme'); return false;"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18m9-9H3"/></svg> Visualizar README</a></li>
+                <li><a href="#readme-animations" onclick="toggleSection('readme-animations'); return false;"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg> Animações de README</a></li>
+                <li><a href="#view-svg" onclick="toggleSection('view-svg'); return false;"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V4H3v12l9 5 9-5z"/></svg> Visualizar SVG</a></li>
+                <li><a href="#other-tools" onclick="toggleSection('other-tools'); return false;"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8 8-8z"/></svg> Outras Ferramentas</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="view-readme" class="hidden">
-            <button class="toggle-btn" onclick="toggleSection('view-readme')">Ocultar</button>
+            <button class="toggle-btn" onclick="toggleSection('view-readme')">Mostrar</button>
             <h2>Visualizar README</h2>
             <textarea id="readme-input" rows="10" cols="80" placeholder="Cole seu README aqui..."></textarea>
             <button onclick="displayReadme()">Exibir README</button>
@@ -31,7 +31,7 @@
         </section>
 
         <section id="readme-animations" class="hidden">
-            <button class="toggle-btn" onclick="toggleSection('readme-animations')">Ocultar</button>
+            <button class="toggle-btn" onclick="toggleSection('readme-animations')">Mostrar</button>
             <h2>Animações de README</h2>
             <div>
                 <h3>Estatísticas de Contribuição</h3>
@@ -52,7 +52,7 @@
         </section>
 
         <section id="view-svg" class="hidden">
-            <button class="toggle-btn" onclick="toggleSection('view-svg')">Ocultar</button>
+            <button class="toggle-btn" onclick="toggleSection('view-svg')">Mostrar</button>
             <h2>Visualizar SVG</h2>
             <label>
                 <input type="radio" name="svg-source" value="url" checked> URL do SVG
@@ -66,7 +66,7 @@
         </section>
 
         <section id="other-tools" class="hidden">
-            <button class="toggle-btn" onclick="toggleSection('other-tools')">Ocultar</button>
+            <button class="toggle-btn" onclick="toggleSection('other-tools')">Mostrar</button>
             <h2>Outras Ferramentas</h2>
             <ul>
                 <li><a href="https://shields.io" target="_blank">Shields.io</a> - Adicione badges personalizáveis ao seu README.</li>
