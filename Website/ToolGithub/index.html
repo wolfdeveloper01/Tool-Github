@@ -6,16 +6,17 @@
     <title>Tool Github</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <h1>Tool Github</h1>
         <nav>
             <ul>
-                <li><a href="#view-readme">Visualizar README</a></li>
-                <li><a href="#readme-animations">Animações de README</a></li>
-                <li><a href="#view-svg">Visualizar SVG</a></li>
-                <li><a href="#other-tools">Outras Ferramentas</a></li>
+                <li><a href="#view-readme"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18m9-9H3"/></svg> Visualizar README</a></li>
+                <li><a href="#readme-animations"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg> Animações de README</a></li>
+                <li><a href="#view-svg"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V4H3v12l9 5 9-5z"/></svg> Visualizar SVG</a></li>
+                <li><a href="#other-tools"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8 8-8z"/></svg> Outras Ferramentas</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +51,13 @@
 
         <section id="view-svg">
             <h2>Visualizar SVG</h2>
-            <input type="text" id="svg-url" placeholder="Digite a URL do arquivo SVG">
+            <label>
+                <input type="radio" name="svg-source" value="url" checked> URL do SVG
+            </label>
+            <label>
+                <input type="radio" name="svg-source" value="xml"> Código SVG
+            </label>
+            <input type="text" id="svg-input" placeholder="Digite a URL do arquivo SVG ou o código SVG">
             <button onclick="displaySvg()">Exibir SVG</button>
             <div id="svg-output"></div>
         </section>
@@ -62,6 +69,9 @@
                 <li><a href="https://gitpod.io" target="_blank">Gitpod</a> - Configure ambientes de desenvolvimento em um clique.</li>
                 <li><a href="https://codecov.io" target="_blank">Codecov</a> - Análise de cobertura de testes.</li>
                 <li><a href="https://snyk.io" target="_blank">Snyk</a> - Análise de segurança de dependências.</li>
+                <li><a href="https://prettier.io" target="_blank">Prettier</a> - Formatação de código.</li>
+                <li><a href="https://eslint.org" target="_blank">ESLint</a> - Análise e linting de código JavaScript.</li>
+                <li><a href="https://github.com/features/actions" target="_blank">GitHub Actions</a> - Automação de workflows.</li>
             </ul>
         </section>
     </main>
