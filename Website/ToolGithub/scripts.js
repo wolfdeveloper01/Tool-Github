@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensure all sections start hidden
+    // Ocultar todas as seções inicialmente
     document.querySelectorAll('section').forEach(section => {
         section.classList.add('d-none');
     });
 
-    // Initialize button text for all sections
-    document.querySelectorAll('.btn-primary').forEach(button => {
+    // Configurar texto dos botões de alternância
+    document.querySelectorAll('.btn-toggle').forEach(button => {
         button.textContent = 'Amostra';
     });
 });
@@ -14,10 +14,10 @@ function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
     const isHidden = section.classList.contains('d-none');
     
-    // Toggle visibility
+    // Alternar visibilidade
     section.classList.toggle('d-none', !isHidden);
     
-    // Update button text based on visibility
+    // Atualizar texto do botão com base na visibilidade
     const button = document.getElementById(`${sectionId}-toggle`);
     if (button) {
         button.textContent = isHidden ? 'Oculta' : 'Amostra';
@@ -27,7 +27,7 @@ function toggleSection(sectionId) {
 function displayReadme() {
     const readmeInput = document.getElementById('readme-input').value;
     const readmeOutput = document.getElementById('readme-output');
-    readmeOutput.innerHTML = marked(readmeInput); // Use a library like Marked.js to render Markdown
+    readmeOutput.innerHTML = marked(readmeInput); // Use a library like Marked.js para renderizar Markdown
 }
 
 function updateContributionStats() {
@@ -56,18 +56,18 @@ function displaySvg() {
                 return response.text();
             })
             .then(svgContent => {
-                // Clean up the SVG content
-                svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
-                svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+                // Limpar o conteúdo do SVG
+                svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remover DOCTYPE
+                svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remover declaração XML
                 svgOutput.innerHTML = svgContent;
             })
             .catch(error => {
                 svgOutput.innerHTML = `<p class="text-danger">Erro ao carregar o SVG: ${error.message}</p>`;
             });
     } else if (sourceType === 'xml') {
-        // Clean up the SVG content
-        let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
-        cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+        // Limpar o conteúdo do SVG
+        let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remover DOCTYPE
+        cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remover declaração XML
         svgOutput.innerHTML = cleanedSvg;
     }
 }
