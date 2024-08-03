@@ -127,7 +127,7 @@ button.toggle-btn {
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-left: 1rem;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -149,23 +149,14 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0.5rem 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #58a6ff;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
+    display: inline;
+    margin: 0 1rem;
 }
 
 main {
     padding: 2rem;
 }
 
-textarea {
-    width: 100%;
-    margin-bottom: 1rem;
+section {
+    margin-bottom: 2rem;
 }
