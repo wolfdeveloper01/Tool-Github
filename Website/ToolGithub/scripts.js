@@ -1,3 +1,16 @@
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.toggle('hidden');
+    
+    // Change the button text based on visibility
+    const button = section.querySelector('.toggle-btn');
+    if (section.classList.contains('hidden')) {
+        button.textContent = 'Mostrar';
+    } else {
+        button.textContent = 'Ocultar';
+    }
+}
+
 function displayReadme() {
     const readmeInput = document.getElementById('readme-input').value;
     const readmeOutput = document.getElementById('readme-output');
