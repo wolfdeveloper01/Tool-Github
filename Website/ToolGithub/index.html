@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tool Github</title>
+    <title>Tool Github - Página Principal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header class="bg-dark text-white text-center p-3">
@@ -15,82 +13,32 @@
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#view-readme" onclick="toggleSection('view-readme'); return false;">Visualizar README</a>
+                    <a class="nav-link text-light" href="view-readme.html">Visualizar README</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#readme-animations" onclick="toggleSection('readme-animations'); return false;">Animações de README</a>
+                    <a class="nav-link text-light" href="readme-animations.html">Animações de README</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#view-svg" onclick="toggleSection('view-svg'); return false;">Visualizar SVG</a>
+                    <a class="nav-link text-light" href="view-svg.html">Visualizar SVG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#other-tools" onclick="toggleSection('other-tools'); return false;">Outras Ferramentas</a>
+                    <a class="nav-link text-light" href="other-tools.html">Outras Ferramentas</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main class="container mt-4">
-        <section id="view-readme" class="d-none">
-            <h2>Visualizar README <button id="view-readme-toggle" class="btn btn-primary btn-sm">Amostra</button></h2>
-            <textarea id="readme-input" class="form-control" rows="10" placeholder="Cole seu README aqui..."></textarea>
-            <button onclick="displayReadme()" class="btn btn-success mt-2">Exibir README</button>
-            <div id="readme-output" class="mt-2"></div>
-        </section>
-
-        <section id="readme-animations" class="d-none">
-            <h2>Animações de README <button id="readme-animations-toggle" class="btn btn-primary btn-sm">Amostra</button></h2>
-            <div class="mb-3">
-                <h3>Estatísticas de Contribuição</h3>
-                <input type="text" id="contribution-username" class="form-control" placeholder="Digite o nome de usuário do GitHub">
-                <button onclick="updateContributionStats()" class="btn btn-primary mt-2">Atualizar Estatísticas</button>
-                <div id="contribution-stats" class="mt-2"></div>
-            </div>
-            <div>
-                <h3>Estatísticas de Linguagens</h3>
-                <input type="text" id="language-username" class="form-control" placeholder="Digite o nome de usuário do GitHub">
-                <button onclick="updateLanguageStats()" class="btn btn-primary mt-2">Atualizar Estatísticas</button>
-                <div id="language-stats" class="mt-2"></div>
-            </div>
-        </section>
-
-        <section id="view-svg" class="d-none">
-            <h2>Visualizar SVG <button id="view-svg-toggle" class="btn btn-primary btn-sm">Amostra</button></h2>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="svg-source" value="url" checked>
-                <label class="form-check-label">URL do SVG</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="svg-source" value="xml">
-                <label class="form-check-label">Código SVG</label>
-            </div>
-            <input type="text" id="svg-input" class="form-control mt-2" placeholder="Digite a URL do arquivo SVG ou o código SVG">
-            <button onclick="displaySvg()" class="btn btn-success mt-2">Exibir SVG</button>
-            <div id="svg-output" class="mt-2"></div>
-        </section>
-
-        <section id="other-tools" class="d-none">
-            <h2>Outras Ferramentas <button id="other-tools-toggle" class="btn btn-primary btn-sm">Amostra</button></h2>
-            <ul class="list-unstyled">
-                <li><a href="https://shields.io" target="_blank" class="btn btn-link">Shields.io</a> - Adicione badges personalizáveis ao seu README.</li>
-                <li><a href="https://gitpod.io" target="_blank" class="btn btn-link">Gitpod</a> - Configure ambientes de desenvolvimento em um clique.</li>
-                <li><a href="https://codecov.io" target="_blank" class="btn btn-link">Codecov</a> - Análise de cobertura de testes.</li>
-                <li><a href="https://snyk.io" target="_blank" class="btn btn-link">Snyk</a> - Análise de segurança de dependências.</li>
-                <li><a href="https://prettier.io" target="_blank" class="btn btn-link">Prettier</a> - Formatação de código.</li>
-                <li><a href="https://eslint.org" target="_blank" class="btn btn-link">ESLint</a> - Análise e linting de código JavaScript.</li>
-                <li><a href="https://github.com/features/actions" target="_blank" class="btn btn-link">GitHub Actions</a> - Automação de workflows.</li>
-            </ul>
-        </section>
+    <main class="container mt-4 text-center">
+        <h2>Bem-vindo ao Tool Github</h2>
+        <p>Escolha uma das opções acima para acessar diferentes funcionalidades.</p>
     </main>
 
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>&copy; 2024 Nickolas Bressy</p>
     </footer>
 
-    <script defer src="scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
