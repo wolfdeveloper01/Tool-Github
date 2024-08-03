@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensure all sections start visible
+    // Ensure all sections start hidden
     document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('hidden');
+        section.classList.add('hidden');
     });
 
     // Initialize button text for all sections
     document.querySelectorAll('.toggle-btn').forEach(button => {
-        button.textContent = 'Ocultar';
+        button.textContent = 'Amostra';
     });
 });
 
@@ -17,9 +17,9 @@ function toggleSection(sectionId) {
     section.classList.toggle('hidden', !isHidden);
     
     // Change the button text based on visibility
-    const button = section.querySelector('.toggle-btn');
+    const button = document.getElementById(`${sectionId}-toggle`);
     if (button) {
-        button.textContent = isHidden ? 'Ocultar' : 'Mostrar';
+        button.textContent = isHidden ? 'Oculta' : 'Amostra';
     }
 }
 
