@@ -22,8 +22,26 @@ function displaySvg() {
     const sourceType = document.querySelector('input[name="svg-source"]:checked').value;
 
     if (sourceType === 'url') {
-        svgOutput.innerHTML = `<img src="${svgInput}" alt="SVG Image">`;
+        fetch(svgInput)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+                return response.text();
+            })
+            .then(svgContent => {
+                // Clean up the SVG content
+                svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+                svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+                svgOutput.innerHTML = svgContent;
+            })
+            .catch(error => {
+                svgOutput.innerHTML = `<p style="color: red;">Erro ao carregar o SVG: ${error.message}</p>`;
+            });
     } else if (sourceType === 'xml') {
-        svgOutput.innerHTML = svgInput;
+        // Clean up the SVG content
+        let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+        cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+        svgOutput.innerHTML = cleanedSvg;
     }
 }
