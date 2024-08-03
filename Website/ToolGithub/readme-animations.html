@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações de README</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center p-3">
+        <h1>Animações de README</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html">Voltar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <div class="mb-3">
+            <h3>Estatísticas de Contribuição</h3>
+            <input type="text" id="contribution-username" class="form-control" placeholder="Digite o nome de usuário do GitHub">
+            <button onclick="updateContributionStats()" class="btn btn-primary mt-2">Atualizar Estatísticas</button>
+            <div id="contribution-stats" class="mt-2"></div>
+        </div>
+        <div>
+            <h3>Estatísticas de Linguagens</h3>
+            <input type="text" id="language-username" class="form-control" placeholder="Digite o nome de usuário do GitHub">
+            <button onclick="updateLanguageStats()" class="btn btn-primary mt-2">Atualizar Estatísticas</button>
+            <div id="language-stats" class="mt-2"></div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2024 Nickolas Bressy</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
