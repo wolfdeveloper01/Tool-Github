@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tool Github</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
@@ -13,8 +14,7 @@
             <ul>
                 <li><a href="#view-readme">Visualizar README</a></li>
                 <li><a href="#readme-animations">Animações de README</a></li>
-                <li><a href="#contribution-stats">Estatísticas de Contribuição</a></li>
-                <li><a href="#language-stats">Estatísticas de Linguagens</a></li>
+                <li><a href="#view-svg">Visualizar SVG</a></li>
                 <li><a href="#other-tools">Outras Ferramentas</a></li>
             </ul>
         </nav>
@@ -23,24 +23,46 @@
     <main>
         <section id="view-readme">
             <h2>Visualizar README</h2>
-            <!-- Aqui você pode adicionar uma área para visualizar o README -->
+            <textarea id="readme-input" rows="10" cols="80" placeholder="Cole seu README aqui..."></textarea>
+            <button onclick="displayReadme()">Exibir README</button>
+            <div id="readme-output"></div>
         </section>
 
         <section id="readme-animations">
             <h2>Animações de README</h2>
             <div>
                 <h3>Estatísticas de Contribuição</h3>
-                <img src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&count_private=true&include_all_commits=true&theme=radical" alt="Contribution Statistics">
+                <input type="text" id="contribution-username" placeholder="Digite o nome de usuário do GitHub">
+                <button onclick="updateContributionStats()">Atualizar Estatísticas</button>
+                <div id="contribution-stats">
+                    <!-- Estatísticas de contribuição serão exibidas aqui -->
+                </div>
             </div>
             <div>
                 <h3>Estatísticas de Linguagens</h3>
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&hide=html&layout=compact&theme=radical" alt="Language Statistics">
+                <input type="text" id="language-username" placeholder="Digite o nome de usuário do GitHub">
+                <button onclick="updateLanguageStats()">Atualizar Estatísticas</button>
+                <div id="language-stats">
+                    <!-- Estatísticas de linguagens serão exibidas aqui -->
+                </div>
             </div>
+        </section>
+
+        <section id="view-svg">
+            <h2>Visualizar SVG</h2>
+            <input type="text" id="svg-url" placeholder="Digite a URL do arquivo SVG">
+            <button onclick="displaySvg()">Exibir SVG</button>
+            <div id="svg-output"></div>
         </section>
 
         <section id="other-tools">
             <h2>Outras Ferramentas</h2>
-            <!-- Adicione outras ferramentas úteis aqui -->
+            <ul>
+                <li><a href="https://shields.io" target="_blank">Shields.io</a> - Adicione badges personalizáveis ao seu README.</li>
+                <li><a href="https://gitpod.io" target="_blank">Gitpod</a> - Configure ambientes de desenvolvimento em um clique.</li>
+                <li><a href="https://codecov.io" target="_blank">Codecov</a> - Análise de cobertura de testes.</li>
+                <li><a href="https://snyk.io" target="_blank">Snyk</a> - Análise de segurança de dependências.</li>
+            </ul>
         </section>
     </main>
 
