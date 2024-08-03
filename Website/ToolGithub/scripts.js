@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Ensure all sections start hidden
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure all sections start visible
     document.querySelectorAll('section').forEach(section => {
-        section.classList.add('hidden');
+        section.classList.remove('hidden');
     });
 
     // Initialize button text for all sections
     document.querySelectorAll('.toggle-btn').forEach(button => {
-        button.textContent = 'Mostrar';
+        button.textContent = 'Ocultar';
     });
 });
 
