@@ -17,7 +17,13 @@ function updateLanguageStats() {
 }
 
 function displaySvg() {
-    const svgUrl = document.getElementById('svg-url').value;
+    const svgInput = document.getElementById('svg-input').value;
     const svgOutput = document.getElementById('svg-output');
-    svgOutput.innerHTML = `<embed src="${svgUrl}" type="image/svg+xml">`;
+    const sourceType = document.querySelector('input[name="svg-source"]:checked').value;
+
+    if (sourceType === 'url') {
+        svgOutput.innerHTML = `<img src="${svgInput}" alt="SVG Image">`;
+    } else if (sourceType === 'xml') {
+        svgOutput.innerHTML = svgInput;
+    }
 }
