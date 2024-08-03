@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar SVG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center p-3">
+        <h1>Visualizar SVG</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html">Voltar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <h2>Visualizar SVG</h2>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="svg-source" value="url" checked>
+            <label class="form-check-label">URL do SVG</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="svg-source" value="xml">
+            <label class="form-check-label">Código SVG</label>
+        </div>
+        <input type="text" id="svg-input" class="form-control mt-2" placeholder="Digite a URL do arquivo SVG ou o código SVG">
+        <button onclick="displaySvg()" class="btn btn-success mt-2">Exibir SVG</button>
+        <div id="svg-output" class="mt-2"></div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2024 Nickolas Bressy</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
