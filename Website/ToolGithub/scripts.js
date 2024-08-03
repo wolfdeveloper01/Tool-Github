@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Ensure all sections start hidden
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('hidden');
+    });
+
+    // Initialize button text for all sections
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.textContent = 'Mostrar';
+    });
+});
+
 function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
     const isHidden = section.classList.contains('hidden');
