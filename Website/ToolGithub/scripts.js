@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Ensure all sections start hidden
     document.querySelectorAll('section').forEach(section => {
-        section.classList.add('hidden');
+        section.classList.add('d-none');
     });
 
     // Initialize button text for all sections
-    document.querySelectorAll('.toggle-btn').forEach(button => {
+    document.querySelectorAll('.btn-primary').forEach(button => {
         button.textContent = 'Amostra';
     });
 });
 
 function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const isHidden = section.classList.contains('hidden');
+    const isHidden = section.classList.contains('d-none');
     
     // Toggle visibility
-    section.classList.toggle('hidden', !isHidden);
+    section.classList.toggle('d-none', !isHidden);
     
     // Update button text based on visibility
     const button = document.getElementById(`${sectionId}-toggle`);
@@ -62,7 +62,7 @@ function displaySvg() {
                 svgOutput.innerHTML = svgContent;
             })
             .catch(error => {
-                svgOutput.innerHTML = `<p style="color: red;">Erro ao carregar o SVG: ${error.message}</p>`;
+                svgOutput.innerHTML = `<p class="text-danger">Erro ao carregar o SVG: ${error.message}</p>`;
             });
     } else if (sourceType === 'xml') {
         // Clean up the SVG content
