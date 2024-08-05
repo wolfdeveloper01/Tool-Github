@@ -5,39 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar SVG</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .section-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center p-3">
-        <h1>Visualizar SVG</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="index.html">Voltar</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div class="content-wrapper">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Visualizar SVG</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.html">Voltar</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main class="container mt-4">
-        <h2>Visualizar SVG</h2>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" name="svg-source" value="url" checked>
-            <label class="form-check-label">URL do SVG</label>
-        </div>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" name="svg-source" value="xml">
-            <label class="form-check-label">Código SVG</label>
-        </div>
-        <input type="text" id="svg-input" class="form-control mt-2" placeholder="Digite a URL do arquivo SVG ou o código SVG">
-        <button onclick="displaySvg()" class="btn btn-success mt-2">Exibir SVG</button>
-        <div id="svg-output" class="mt-2"></div>
-    </main>
+        <main class="container mt-4">
+            <h2>Visualização de SVG</h2>
 
-    <footer class="bg-dark text-white text-center p-3 mt-4">
-        <p>&copy; 2024 Nickolas Bressy</p>
-    </footer>
+            <div class="mb-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="svg-source" id="svg-url" value="url" checked>
+                    <label class="form-check-label" for="svg-url">
+                        URL do SVG
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="svg-source" id="svg-xml" value="xml">
+                    <label class="form-check-label" for="svg-xml">
+                        Código SVG
+                    </label>
+                </div>
+                <textarea id="svg-input" class="form-control mt-2" rows="10" placeholder="Cole o código SVG ou URL aqui..."></textarea>
+                <button onclick="displaySvg()" class="btn btn-success mt-2">Exibir SVG</button>
+            </div>
+            
+            <section id="svg-section" class="d-none section-content">
+                <h3>SVG Visualizado</h3>
+                <div id="svg-output"></div>
+            </section>
+        </main>
 
-    <script src="scripts.js"></script>
+        <footer>
+            <p>&copy; 2024 Nickolas Bressy</p>
+        </footer>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
