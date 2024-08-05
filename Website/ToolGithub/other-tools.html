@@ -5,32 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outras Ferramentas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .section-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center p-3">
-        <h1>Outras Ferramentas</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="index.html">Voltar</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div class="content-wrapper">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Outras Ferramentas</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.html">Voltar</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main class="container mt-4">
-        <h2>Outras Ferramentas</h2>
-        <p>Aqui você pode adicionar links e recursos para outras ferramentas úteis.</p>
-        <ul>
-            <li><a href="https://example.com/tool1" target="_blank">Ferramenta 1</a></li>
-            <li><a href="https://example.com/tool2" target="_blank">Ferramenta 2</a></li>
-            <!-- Adicione mais ferramentas conforme necessário -->
-        </ul>
-    </main>
+        <main class="container mt-4">
+            <h2>Outras Ferramentas</h2>
+            <!-- Adicione aqui as ferramentas ou funcionalidades adicionais -->
+        </main>
 
-    <footer class="bg-dark text-white text-center p-3 mt-4">
-        <p>&copy; 2024 Nickolas Bressy</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 Nickolas Bressy</p>
+        </footer>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
