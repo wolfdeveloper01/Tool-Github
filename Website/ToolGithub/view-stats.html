@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas de Contribuição</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
     <style>
         .content-wrapper {
             min-height: 100vh;
@@ -60,6 +59,12 @@
         </footer>
     </div>
 
-    <script src="scripts/scripts.js"></script>
+    <script>
+        function updateContributionStats() {
+            const username = document.getElementById('contribution-username').value;
+            const statsContainer = document.getElementById('contribution-stats');
+            statsContainer.innerHTML = `<img src="https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&count_private=true&include_all_commits=true&theme=radical" alt="Contribution Statistics">`;
+        }
+    </script>
 </body>
 </html>
