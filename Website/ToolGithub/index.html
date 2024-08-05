@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramentas para Desenvolvedores</title>
+    <title>Developer Tools</title>
+    <link rel="icon" href="./assets/96.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .header, .footer {
-            background-color: #343a40;
-            color: white;
+            background-color: #1e1e1e; /* Fundo escuro para estilo de desenvolvedor */
+            color: #dcdcdc; /* Texto claro */
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .header {
+            background-color: #333; /* Cor de fundo escura */
+            color: #dcdcdc; /* Texto claro */
             padding: 1rem;
+            border-bottom: 2px solid #444; /* Linha inferior para destaque */
+        }
+        .header h1 {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        #terminal-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
         }
         .footer {
+            background-color: #333; /* Cor de fundo escura */
+            color: #dcdcdc; /* Texto claro */
             padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             text-align: center;
+            border-top: 2px solid #444; /* Linha superior para destaque */
+            margin-top: auto;
         }
         .card {
             margin-bottom: 1.5rem;
+            background-color: #2d2d2d; /* Fundo escuro dos cards */
+            border: 1px solid #444; /* Borda sutil */
         }
         .card-body {
-            background-color: #ffffff;
-            border-radius: .25rem;
+            color: #dcdcdc;
         }
         .card-title {
             font-size: 1.5rem;
@@ -42,27 +60,36 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
-        .container {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+        .typewriter {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid #dcdcdc; /* Efeito de cursor */
+            animation: blink-caret .75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #dcdcdc; }
+        }
+        .main-content {
+            margin-top: 1.5rem; /* Espaço entre o cabeçalho e a seção principal */
         }
     </style>
 </head>
 <body>
-    <header class="header text-center">
-        <h1>Ferramentas para Desenvolvedores</h1>
-        <p>Recursos e ferramentas úteis para aprimorar seu trabalho com GitHub e além.</p>
+    <header class="header">
+        <h1><span id="terminal-symbol">></span> <span id="typewriter" class="typewriter"></span></h1>
     </header>
 
-    <main class="container">
+    <main class="container main-content">
         <div class="row">
             <!-- Ferramenta 1 -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">GitHub Actions</h5>
-                        <p class="card-text">Automatize seus fluxos de trabalho de desenvolvimento com GitHub Actions.</p>
-                        <a href="https://docs.github.com/en/actions" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Automate your development workflows with GitHub Actions.</p>
+                        <a href="https://docs.github.com/en/actions" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -72,8 +99,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">GitHub Pages</h5>
-                        <p class="card-text">Hospede sites diretamente do seu repositório GitHub com GitHub Pages.</p>
-                        <a href="https://docs.github.com/en/pages" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Host websites directly from your GitHub repository with GitHub Pages.</p>
+                        <a href="https://docs.github.com/en/pages" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -83,8 +110,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Dependabot</h5>
-                        <p class="card-text">Mantenha suas dependências seguras e atualizadas com Dependabot.</p>
-                        <a href="https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Keep your dependencies secure and up to date with Dependabot.</p>
+                        <a href="https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -94,8 +121,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">GitHub Gists</h5>
-                        <p class="card-text">Compartilhe fragmentos de código e anotações com GitHub Gists.</p>
-                        <a href="https://gist.github.com/" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Share code snippets and notes with GitHub Gists.</p>
+                        <a href="https://gist.github.com/" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -105,8 +132,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">GitHub CLI</h5>
-                        <p class="card-text">Gerencie seus repositórios GitHub diretamente da linha de comando com GitHub CLI.</p>
-                        <a href="https://cli.github.com/" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Manage your GitHub repositories directly from the command line with GitHub CLI.</p>
+                        <a href="https://cli.github.com/" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -116,8 +143,19 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">GitHub CodeSpaces</h5>
-                        <p class="card-text">Desenvolva seu código em ambientes de desenvolvimento configurados na nuvem com GitHub CodeSpaces.</p>
-                        <a href="https://github.com/features/codespaces" class="btn btn-primary" target="_blank">Saiba mais</a>
+                        <p class="card-text">Develop your code in development environments configured in the cloud with GitHub CodeSpaces.</p>
+                        <a href="https://github.com/features/codespaces" class="btn btn-primary" target="_blank">know more</a>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- Ferramenta 7 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">contrib.rocks</h5>
+                        <p class="card-text">Generate an image of contributors to keep your README.md in sync.</p>
+                        <a href="https://contrib.rocks" class="btn btn-primary" target="_blank">know more</a>
                     </div>
                 </div>
             </div>
@@ -125,9 +163,44 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Nickolas Bressy - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Nickolas Bressy - All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typewriter = document.getElementById('typewriter');
+            const texts = ['Developer Tools', 'Explore Features and Utilities'];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentText = texts[textIndex];
+                let displayText = currentText.substring(0, charIndex);
+
+                if (isDeleting) {
+                    displayText = currentText.substring(0, charIndex);
+                    charIndex--;
+                } else {
+                    displayText = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                typewriter.textContent = displayText;
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    setTimeout(() => isDeleting = true, 1000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+
+                setTimeout(type, isDeleting ? 50 : 150);
+            }
+
+            type();
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
