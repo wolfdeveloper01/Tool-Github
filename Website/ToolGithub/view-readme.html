@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar README</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
     <style>
         .content-wrapper {
             min-height: 100vh;
@@ -65,6 +64,25 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="scripts/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure all sections start hidden
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('d-none');
+            });
+
+            // Initialize button text for all sections
+            document.querySelectorAll('.btn-primary').forEach(button => {
+                button.textContent = 'Amostra';
+            });
+        });
+
+        function displayReadme() {
+            const readmeInput = document.getElementById('readme-input').value;
+            const readmeOutput = document.getElementById('readme-output');
+            readmeOutput.innerHTML = marked(readmeInput); // Use a library like Marked.js to render Markdown
+            document.getElementById('readme-section').classList.remove('d-none');
+        }
+    </script>
 </body>
 </html>
