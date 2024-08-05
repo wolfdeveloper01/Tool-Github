@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas de Contribuição</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .section-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="bg-dark text-white text-center p-3">
+            <h1>Estatísticas de Contribuição</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.html">Voltar</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container mt-4">
+            <h2>Estatísticas de Contribuição</h2>
+
+            <div class="mb-4">
+                <input type="text" id="contribution-username" class="form-control" placeholder="Nome de usuário do GitHub">
+                <button onclick="updateContributionStats()" class="btn btn-success mt-2">Atualizar Estatísticas</button>
+            </div>
+            
+            <section id="contribution-stats" class="section-content">
+                <!-- Estatísticas de Contribuição serão inseridas aqui -->
+            </section>
+            
+            <h2 class="mt-4">Estatísticas de Linguagens</h2>
+
+            <div class="mb-4">
+                <input type="text" id="language-username" class="form-control" placeholder="Nome de usuário do GitHub">
+                <button onclick="updateLanguageStats()" class="btn btn-success mt-2">Atualizar Estatísticas</button>
+            </div>
+
+            <section id="language-stats" class="section-content">
+                <!-- Estatísticas de Linguagens serão inseridas aqui -->
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Nickolas Bressy</p>
+        </footer>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
