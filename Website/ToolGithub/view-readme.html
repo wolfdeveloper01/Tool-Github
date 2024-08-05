@@ -20,10 +20,17 @@
     </header>
 
     <main class="container mt-4">
-        <h2>Visualizar README</h2>
-        <textarea id="readme-input" class="form-control" rows="10" placeholder="Cole seu README aqui..."></textarea>
-        <button onclick="displayReadme()" class="btn btn-success mt-2">Exibir README</button>
-        <div id="readme-output" class="mt-2"></div>
+        <h2>Visualização de README</h2>
+        
+        <div class="mb-4">
+            <textarea id="readme-input" class="form-control" rows="10" placeholder="Cole seu README aqui..."></textarea>
+            <button onclick="displayReadme()" class="btn btn-success mt-2">Exibir README</button>
+        </div>
+        
+        <section id="readme-section" class="d-none">
+            <h3>README Visualizado</h3>
+            <div id="readme-output"></div>
+        </section>
     </main>
 
     <footer class="bg-dark text-white text-center p-3 mt-4">
