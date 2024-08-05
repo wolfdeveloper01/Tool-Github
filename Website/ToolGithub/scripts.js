@@ -27,7 +27,12 @@ function toggleSection(sectionId) {
 function displayReadme() {
     const readmeInput = document.getElementById('readme-input').value;
     const readmeOutput = document.getElementById('readme-output');
-    readmeOutput.innerHTML = marked(readmeInput); // Use a library like Marked.js para renderizar Markdown
+    const readmeSection = document.getElementById('readme-section');
+
+    readmeOutput.innerHTML = marked(readmeInput); // Use a biblioteca Marked.js para renderizar Markdown
+
+    // Mostrar a seção de visualização
+    readmeSection.classList.remove('d-none');
 }
 
 function updateContributionStats() {
