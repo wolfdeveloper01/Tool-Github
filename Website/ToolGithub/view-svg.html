@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar SVG</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
     <style>
         .content-wrapper {
             min-height: 100vh;
@@ -76,7 +75,38 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="scripts/scripts.js"></script>
+    <script>
+        function displaySvg() {
+            const svgInput = document.getElementById('svg-input').value;
+            const svgOutput = document.getElementById('svg-output');
+            const sourceType = document.querySelector('input[name="svg-source"]:checked').value;
+
+            if (sourceType === 'url') {
+                fetch(svgInput)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok.');
+                        }
+                        return response.text();
+                    })
+                    .then(svgContent => {
+                        // Clean up the SVG content
+                        svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+                        svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+                        svgOutput.innerHTML = svgContent;
+                        document.getElementById('svg-section').classList.remove('d-none');
+                    })
+                    .catch(error => {
+                        svgOutput.innerHTML = `<p class="text-danger">Erro ao carregar o SVG: ${error.message}</p>`;
+                    });
+            } else if (sourceType === 'xml') {
+                // Clean up the SVG content
+                let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+                cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
+                svgOutput.innerHTML = cleanedSvg;
+                document.getElementById('svg-section').classList.remove('d-none');
+            }
+        }
+    </script>
 </body>
 </html>
