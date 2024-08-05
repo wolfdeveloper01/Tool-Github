@@ -29,7 +29,15 @@ function displayReadme() {
     const readmeOutput = document.getElementById('readme-output');
     const readmeSection = document.getElementById('readme-section');
 
-    readmeOutput.innerHTML = marked(readmeInput); // Use a biblioteca Marked.js para renderizar Markdown
+    // Verificar se o input do README não está vazio
+    if (readmeInput.trim() === '') {
+        readmeOutput.innerHTML = '<p class="text-danger">Por favor, insira algum conteúdo no README.</p>';
+        readmeSection.classList.add('d-none');
+        return;
+    }
+
+    // Renderizar o README usando Marked.js
+    readmeOutput.innerHTML = marked(readmeInput);
 
     // Mostrar a seção de visualização
     readmeSection.classList.remove('d-none');
