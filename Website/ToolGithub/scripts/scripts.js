@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Ocultar todas as seções inicialmente
+    // Ensure all sections start hidden
     document.querySelectorAll('section').forEach(section => {
         section.classList.add('d-none');
     });
 
-    // Configurar texto dos botões de alternância
-    document.querySelectorAll('.btn-toggle').forEach(button => {
+    // Initialize button text for all sections
+    document.querySelectorAll('.btn-primary').forEach(button => {
         button.textContent = 'Amostra';
     });
 });
@@ -14,10 +14,10 @@ function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
     const isHidden = section.classList.contains('d-none');
     
-    // Alternar visibilidade
+    // Toggle visibility
     section.classList.toggle('d-none', !isHidden);
     
-    // Atualizar texto do botão com base na visibilidade
+    // Update button text based on visibility
     const button = document.getElementById(`${sectionId}-toggle`);
     if (button) {
         button.textContent = isHidden ? 'Oculta' : 'Amostra';
@@ -27,20 +27,8 @@ function toggleSection(sectionId) {
 function displayReadme() {
     const readmeInput = document.getElementById('readme-input').value;
     const readmeOutput = document.getElementById('readme-output');
-    const readmeSection = document.getElementById('readme-section');
-
-    // Verificar se o input do README não está vazio
-    if (readmeInput.trim() === '') {
-        readmeOutput.innerHTML = '<p class="text-danger">Por favor, insira algum conteúdo no README.</p>';
-        readmeSection.classList.add('d-none');
-        return;
-    }
-
-    // Renderizar o README usando Marked.js
-    readmeOutput.innerHTML = marked(readmeInput);
-
-    // Mostrar a seção de visualização
-    readmeSection.classList.remove('d-none');
+    readmeOutput.innerHTML = marked(readmeInput); // Use a library like Marked.js to render Markdown
+    document.getElementById('readme-section').classList.remove('d-none');
 }
 
 function updateContributionStats() {
@@ -69,18 +57,18 @@ function displaySvg() {
                 return response.text();
             })
             .then(svgContent => {
-                // Limpar o conteúdo do SVG
-                svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remover DOCTYPE
-                svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remover declaração XML
+                // Clean up the SVG content
+                svgContent = svgContent.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+                svgContent = svgContent.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
                 svgOutput.innerHTML = svgContent;
             })
             .catch(error => {
                 svgOutput.innerHTML = `<p class="text-danger">Erro ao carregar o SVG: ${error.message}</p>`;
             });
     } else if (sourceType === 'xml') {
-        // Limpar o conteúdo do SVG
-        let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remover DOCTYPE
-        cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remover declaração XML
+        // Clean up the SVG content
+        let cleanedSvg = svgInput.replace(/<!DOCTYPE[^>]*>/i, ''); // Remove DOCTYPE
+        cleanedSvg = cleanedSvg.replace(/<\?xml[^>]*>/i, '');  // Remove XML declaration
         svgOutput.innerHTML = cleanedSvg;
     }
 }
