@@ -1,0 +1,35 @@
+name: Notificação de Push no Repositório
+
+on:
+  push:
+    branches:
+      - main  # Ou qualquer outra branch que você desejar
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificação para o Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          # Obter informações do commit
+          REPO_URL="https://github.com/${{ github.repository }}"
+          COMMIT_URL="${REPO_URL}/commit/${{ github.sha }}"
+          COMMIT_AUTHOR="${{ github.actor }}"
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+
+          # Criar mensagem com formatação
+          MESSAGE="🚀 *Novo Push no Repositório!*\n\n"
+          MESSAGE="${MESSAGE}*Repositório:* [${{ github.repository }}](${REPO_URL})\n"
+          MESSAGE="${MESSAGE}*Autor do Commit:* ${COMMIT_AUTHOR}\n"
+          MESSAGE="${MESSAGE}*Mensagem do Commit:* ${COMMIT_MESSAGE}\n"
+          MESSAGE="${MESSAGE}*Commit:* [Ver Commit](${COMMIT_URL})\n"
+
+          # Enviar mensagem formatada para o Telegram
+          curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id=${TELEGRAM_CHAT_ID} \
+            -d parse_mode=Markdown \
+            -d text="${MESSAGE}"
