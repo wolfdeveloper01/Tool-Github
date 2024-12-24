@@ -21,15 +21,15 @@ jobs:
           COMMIT_AUTHOR="${{ github.actor }}"
           COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
 
-          # Criar mensagem com formatação usando printf para garantir as quebras de linha
-          MESSAGE=$(printf "🚀 *Novo Push no Repositório!*\n\n")
-          MESSAGE+=$(printf "*Repositório:* [${{ github.repository }}](${REPO_URL})\n")
-          MESSAGE+=$(printf "*Autor do Commit:* ${COMMIT_AUTHOR}\n")
-          MESSAGE+=$(printf "*Mensagem do Commit:* ${COMMIT_MESSAGE}\n")
-          MESSAGE+=$(printf "*Commit:* [Ver Commit](${COMMIT_URL})")
+          # Criar mensagem formatada com quebras de linha
+          MESSAGE="🚀 *Novo Push no Repositório!*\n\n"
+          MESSAGE="${MESSAGE}*Repositório:* [${{ github.repository }}](${REPO_URL})\n"
+          MESSAGE="${MESSAGE}*Autor do Commit:* ${COMMIT_AUTHOR}\n"
+          MESSAGE="${MESSAGE}*Mensagem do Commit:* ${COMMIT_MESSAGE}\n"
+          MESSAGE="${MESSAGE}*Commit:* [Ver Commit](${COMMIT_URL})"
 
           # Enviar mensagem formatada para o Telegram
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id=${TELEGRAM_CHAT_ID} \
             -d parse_mode=Markdown \
-            -d text="$MESSAGE"
+            -d text="${MESSAGE}"
