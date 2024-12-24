@@ -1,27 +1,26 @@
-name: Delete All Workflow Runs
+name: Delete old runs
 
 on:
-  workflow_dispatch:  # Permite execução manual do workflow
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Number of retains days.'
+        required: true
+        default: '0'
+      minimum_runs:
+        description: 'The minimum runs to keep for each workflow.'
+        required: true
+        default: '0'
 
 jobs:
-  delete_workflow_runs:
+  deleteWorkflowRuns:
+    name: Delete old workflow runs
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
-
-      - name: Delete all workflow runs
-        env:
-          GITHUB_TOKEN: ${{ secrets.SUPER_TOKEN }}  # Certifique-se que o super token está configurado nos secrets
-        run: |
-          # Obtendo a lista de execuções de workflows
-          workflow_runs=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-          https://api.github.com/repos/${{ github.repository }}/actions/runs | jq -r '.workflow_runs[].id')
-
-          # Apagando cada execução de workflow
-          for run_id in $workflow_runs; do
-            curl -X DELETE -H "Authorization: token $GITHUB_TOKEN" \
-            https://api.github.com/repos/${{ github.repository }}/actions/runs/$run_id
-            echo "Deleted workflow run $run_id"
-          done
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2.0.6
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: ${{ github.event.inputs.days }}
+          keep_minimum_runs: ${{ github.event.inputs.minimum_runs }}
