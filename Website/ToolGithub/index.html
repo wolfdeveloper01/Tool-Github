@@ -18,75 +18,7 @@
 	
     <link rel="icon" href="./assets/96.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #1e1e1e; /* Fundo escuro para estilo de desenvolvedor */
-            color: #dcdcdc; /* Texto claro */
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .header {
-            background-color: #333; /* Cor de fundo escura */
-            color: #dcdcdc; /* Texto claro */
-            padding: 1rem;
-            border-bottom: 2px solid #444; /* Linha inferior para destaque */
-        }
-        .header h1 {
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-        }
-        #terminal-icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 0.5rem;
-        }
-        .footer {
-            background-color: #333; /* Cor de fundo escura */
-            color: #dcdcdc; /* Texto claro */
-            padding: 1rem;
-            text-align: center;
-            border-top: 2px solid #444; /* Linha superior para destaque */
-            margin-top: auto;
-        }
-        .card {
-            margin-bottom: 1.5rem;
-            background-color: #2d2d2d; /* Fundo escuro dos cards */
-            border: 1px solid #444; /* Borda sutil */
-        }
-        .card-body {
-            color: #dcdcdc;
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .typewriter {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: .15em solid #dcdcdc; /* Efeito de cursor */
-            animation: blink-caret .75s step-end infinite;
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #dcdcdc; }
-        }
-        .main-content {
-            margin-top: 1.5rem; /* Espaço entre o cabeçalho e a seção principal */
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header class="header">
@@ -175,46 +107,11 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Nickolas Bressy - All rights reserved.</p>
+        <p>&copy; 2025 WolfDeveloper01 - All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const typewriter = document.getElementById('typewriter');
-            const texts = ['Tool Github', 'Developer Tools'];
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-
-            function type() {
-                const currentText = texts[textIndex];
-                let displayText = currentText.substring(0, charIndex);
-
-                if (isDeleting) {
-                    displayText = currentText.substring(0, charIndex);
-                    charIndex--;
-                } else {
-                    displayText = currentText.substring(0, charIndex + 1);
-                    charIndex++;
-                }
-
-                typewriter.textContent = displayText;
-
-                if (!isDeleting && charIndex === currentText.length) {
-                    setTimeout(() => isDeleting = true, 1000);
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                }
-
-                setTimeout(type, isDeleting ? 50 : 150);
-            }
-
-            type();
-        });
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
