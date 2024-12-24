@@ -26,7 +26,12 @@ jobs:
           curl -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage \
             -d chat_id=${TELEGRAM_CHAT_ID} \
             -d parse_mode=Markdown \
-            -d text="✨ *Pull Request Mergeado!*%0A
-*Repositório:* [${{ github.repository }}](${REPO_URL})%0A
-*Autor:* ${PR_AUTHOR}%0A
-*Título:* [${PR_TITLE}](${PR_URL})"
+            -d text="
+✨ *Pull Request Mergeado!*
+
+*Repositório:* [${{ github.repository }}](${REPO_URL})
+
+*Autor:* ${PR_AUTHOR}
+
+*Título:* [${PR_TITLE}](${PR_URL})
+"
