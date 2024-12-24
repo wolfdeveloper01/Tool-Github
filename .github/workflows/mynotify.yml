@@ -26,10 +26,10 @@ jobs:
           MESSAGE="${MESSAGE}*Repositório:* [${{ github.repository }}](${REPO_URL})\n"
           MESSAGE="${MESSAGE}*Autor do Commit:* ${COMMIT_AUTHOR}\n"
           MESSAGE="${MESSAGE}*Mensagem do Commit:* ${COMMIT_MESSAGE}\n"
-          MESSAGE="${MESSAGE}*Commit:* [Ver Commit](${COMMIT_URL})\n"
+          MESSAGE="${MESSAGE}*Commit:* [Ver Commit](${COMMIT_URL})"
 
           # Enviar mensagem formatada para o Telegram
           curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id=${TELEGRAM_CHAT_ID} \
             -d parse_mode=Markdown \
-            -d text="${MESSAGE}"
+            -d text="$MESSAGE"
