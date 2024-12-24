@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
             const typewriter = document.getElementById('typewriter');
-            const texts = ['Tool Github', 'Developer Tools'];
+            const texts = ['Tool Github', 'Tool from Developer'];
             let textIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
