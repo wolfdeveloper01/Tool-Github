@@ -14,7 +14,7 @@ O **Tool Github** é uma plataforma desenvolvida para oferecer diversas ferramen
 Para usar o Tool Github, basta acessar o site hospedado ou clonar o repositório e abrir o arquivo `index.html` em seu navegador. Não é necessário instalar nada localmente.
 
 ```bash
-git clone https://github.com/nickolasbressy/Tool-Github.git
+git clone https://github.com/wolfdeveloper01/Tool-Github.git
 cd Tool-Github
 ```
 
